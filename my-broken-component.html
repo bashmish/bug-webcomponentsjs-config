@@ -1,0 +1,20 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="my-component.html">
+
+<dom-module id="my-broken-component">
+
+    <template>
+    </template>
+
+    <script>
+        Polymer({
+            is: 'my-broken-component',
+            ready: function () {
+                var component = document.createElement('my-component');
+                Polymer.dom(this).appendChild(component);
+                component.checkLightDom();
+            }
+        });
+    </script>
+
+</dom-module>

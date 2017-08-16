@@ -1,0 +1,12 @@
+{
+  "name": "bug-webcomponentsjs-config",
+  "version": "1.0.0",
+  "authors": [
+    "Mikhail Bashkirov <bashmish@gmail.com>"
+  ],
+  "description": "Broken webcomponentsjs polyfill configuration through global vars",
+  "dependencies": {
+    "polymer": "Polymer/polymer#2.0.2",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#1.0.8"
+  }
+}

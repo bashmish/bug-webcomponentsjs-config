@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head>
+    <title>Broken polyfill configuration</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    <script>window.ShadyDOM = { force: true };</script>
+    <script>window.customElements = { forcePolyfill: true };</script>
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="my-broken-component.html">
+</head>
+<body>
+    <my-broken-component></my-broken-component>
+</body>
+</html>
