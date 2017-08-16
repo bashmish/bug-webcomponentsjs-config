@@ -6,12 +6,11 @@ If you enforce ShadyDOM by configuring polyfill using global vars before importi
     <script>window.customElements = { forcePolyfill: true };</script>
     <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
 
-then document.createElement('...') for custom elements does not initialize element correctly.
+then `document.createElement('...')` for custom elements does not initialize element correctly.
 
-Check this by running polymer server
+Check this by installing and running polymer server in this project (polymer-cli assumed installed)
 
-    bower install;
-    polymer serve -o;
+    bower install && polymer serve -o
 
 and you'll get
 
@@ -34,11 +33,11 @@ Try it (possible local server address http://127.0.0.1:8081/components/bug-webco
     my-component.html:14 Ready works!
     my-component.html:19 Component LightDOM is initialized!
 
-This works even you leave these lines in the code, so looks like GET params override them anyway.
+This works even you leave these lines in the code
 
     <script>window.ShadyDOM = { force: true };</script>
     <script>window.customElements = { forcePolyfill: true };</script>
 
-It breaks under Polymer 1.9.x too.
+so looks like GET params override them anyway.
 
-And also breaks without `window.customElements` line, having only `<script>window.ShadyDOM = { force: true };</script>`.
+This bug also exists under Polymer 1.9.x too. And also without `window.customElements` line, having only `<script>window.ShadyDOM = { force: true };</script>`.
